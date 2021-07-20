@@ -6,10 +6,16 @@ import Notification from "../Notification";
 import { Wrapper } from "../Wrapper/Wrapper.styles";
 
 class App extends Component {
-  state = {
+  static defaultProps = {
     good: 0,
     neutral: 0,
     bad: 0,
+  };
+
+  state = {
+    good: this.props.good,
+    neutral: this.props.neutral,
+    bad: this.props.bad,
   };
 
   onLeaveFeedback = evt => {
@@ -39,11 +45,14 @@ class App extends Component {
   }
 
   render() {
+    const optionsArr = Object.keys(this.state);
+
     return (
       <Wrapper>
         <SectionTitle title="Please leave feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            // options={Object.keys(this.state)}
+            options={optionsArr}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </SectionTitle>
