@@ -13,14 +13,10 @@ const Statistics = ({ stateObj, total, positivePercentage }) => {
         />
       ))}
 
-      <StatisticsItem
-        key="total"
-        label="Total:"
-        value={total(Object.values(stateObj))}
-      />
+      <StatisticsItem key="total" label="Total" value={total()} />
       <StatisticsItem
         key="positivePercentage"
-        label="Positive feedback:"
+        label="Positive feedback"
         value={positivePercentage()}
       />
     </ListStatistic>

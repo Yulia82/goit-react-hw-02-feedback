@@ -24,8 +24,8 @@ class App extends Component {
     }));
   };
 
-  countTotalFeedback = arr => {
-    return arr.reduce((sum, current) => sum + current, 0);
+  countTotalFeedback = () => {
+    return Object.values(this.state).reduce((sum, current) => sum + current, 0);
   };
 
   countPositiveFeedbackPercentage = () => {
